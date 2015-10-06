@@ -41,5 +41,12 @@ http {
 			proxy_redirect off;
 			proxy_pass http://app_server;
 		}
+		location reproxy {
+			internal;
+
+			resolver 8.8.8.8;
+			set $reproxy $upstream_http_x_reproxy_url;
+    		proxy_pass $reproxy;
+		}
 	}
 }
