@@ -41,7 +41,7 @@ http {
 			proxy_redirect off;
 			proxy_pass http://app_server;
 		}
-		location reproxy {
+		location /reproxy {
 			internal;
 
 			resolver 8.8.8.8;
