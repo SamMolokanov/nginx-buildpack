@@ -8,7 +8,6 @@ mkfifo $psmgr
 erb config/nginx.conf.erb > config/nginx.conf
 
 #Evaluate passfrase to get $SSL_PASS
-mkdir certs
 erb certs/ssl_password_file.txt.erb > certs/ssl_password_file.txt
 
 n=1
