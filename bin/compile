@@ -14,10 +14,9 @@ mkdir -p "$1/config"
 cp config/mime.types "$1/config/"
 echo '-----> nginx-buildpack: Default mime.types copied to app/config/'
 
-mkdir -p "$1/certs"
-cp certs/cert.key "$1/certs/"
-cp certs/cert.pem "$1/certs/"
-cp certs/ssl_password_file.txt.erb "$1/certs/"
+cp certs/cert.key "$1/config/"
+cp certs/cert.pem "$1/config/"
+cp certs/ssl_password_file.txt.erb "$1/config/"
 echo '-----> nginx-buildpack: Certificates were copied to app/config/'
 
 if [[ ! -f $1/config/nginx.conf.erb ]]; then
