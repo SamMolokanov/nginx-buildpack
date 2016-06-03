@@ -31,16 +31,7 @@ http {
  	}
 
 	server {
-		listen <%= ENV["PORT"] %>;
-		server_name default_server;
-		add_header Strict-Transport-Security max-age=31536000;
-	    location / {
-	        proxy_pass https://$host:<%= ENV["PORT"] %>$request_uri;
-	    }
-	}
-
-	server {
-		listen <%= ENV["PORT"] %> ssl http2 default_server;
+		listen <%= ENV["PORT"] %> default_server;
 		server_name _;
 		keepalive_timeout 5;
 
